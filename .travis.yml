@@ -1,0 +1,11 @@
+# we use java
+language: java
+
+#we use the java development kit (jdk)
+jdk:
+- openjdk8
+script:
+# we avoid this error : "the job expected the maximum log length and has been terminated"
+ - cat $HOME/.m2/settings.xml
+ #deploying the app on Docker & Heroku
+ - mvn heroku:deploy
